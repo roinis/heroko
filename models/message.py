@@ -30,11 +30,11 @@ class Message(db.Model):
 
     @classmethod
     def get_message_by_id(cls,id):
-        return cls.query.filter_by(receiver_id=id)
+        return cls.query.filter_by(receiver_id=id).all()
 
     @classmethod
     def get_unread_message_by_id(cls,id):
-        return cls.query.filter(and_(cls.receiver_id==id, cls.read==False))
+        return cls.query.filter(and_(cls.receiver_id==id, cls.read==False)).all()
 
     @classmethod
     def read_message(cls,id):

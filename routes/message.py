@@ -14,14 +14,12 @@ class MessageAPI(Resource):
         if not query_params:
             return {"error": True, "message": "wrong params"}, 404
         try:
-            if 'all' in query_params:
-                print()
             if 'all' in query_params and query_params['all'].lower() == "true":
-                return jsonify([message.json() for message in Message.get_message_by_id(id=user['id'])]), 200
+                return jsonify([message.json() for message in Message.get_message_by_id(id=user['id'])])
             elif 'unread' in query_params and query_params['unread'].lower() == "true":
-                return jsonify([message.json() for message in Message.get_unread_message_by_id(id=user['id'])]), 200
+                return jsonify([message.json() for message in Message.get_unread_message_by_id(id=user['id'])])
             elif 'read' in query_params and query_params['read'].lower() == "true":
-                return Message.read_message(id=user['id']).json(), 200
+                return Message.read_message(id=user['id']).json()
         except AttributeError as e:
             return {"error": False, "message": "There is no messages for this query"}, 404
 
