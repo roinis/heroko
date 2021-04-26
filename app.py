@@ -5,7 +5,6 @@ from routes.message import MessageAPI
 from routes.user import UserAPI
 from routes.auth import AuthAPI
 from db.db import db
-from security import authenticate,identity
 import datetime
 import create_tables
 

@@ -1,4 +1,4 @@
-import sqlite3
+
 from db.db import db
 from datetime import datetime
 from sqlalchemy import and_

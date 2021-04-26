@@ -3,7 +3,7 @@ from flask_restful import Resource
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended.utils import get_jwt_identity
 from models.message import Message
-import datetime
+
 class MessageAPI(Resource):
 
 
