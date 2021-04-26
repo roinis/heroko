@@ -2,3 +2,4 @@ Flask
 Flask-Restful
 flask_jwt_extended
 Flask-SQLalchemy
+uwsgi
